@@ -43,6 +43,7 @@ public class AbilityCheck : MonoBehaviour
 
     void OnEnable()
     {
+        scrollBarImage.fillAmount = 0;
         successBarImage.fillAmount = 0;
         successValue = 0f;
         RandomizeCheckZone();

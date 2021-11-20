@@ -10,16 +10,12 @@ public class GameStateListener : MonoBehaviour
 
     [Header("Enabled & Disabled Shortcuts")]
     public MonoBehaviour[] components;
+    public Collider[] colliders;
     public List<GameStateSO> enabledStates;
     public List<GameStateSO> disabledStates;
 
     [Header("Actions")]
     public StateActions[] stateActions;
-    // public UnityEvent onMainMenuState;
-    // public UnityEvent onLoadingState;
-    // public UnityEvent onFindingBaseState;
-    // public UnityEvent onBaseCreatedState;
-    // public UnityEvent onPauseState;
 
     private void OnEnable()
     {
@@ -48,6 +44,18 @@ public class GameStateListener : MonoBehaviour
             if (this.disabledStates.Contains(newGameState))
             {
                 component.enabled = false;
+            }
+        }
+
+        foreach(var collider in colliders)
+        {
+            if (this.enabledStates.Contains(newGameState))
+            {
+                collider.enabled = true;
+            }
+            if (this.disabledStates.Contains(newGameState))
+            {
+                collider.enabled = false;
             }
         }
     }

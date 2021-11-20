@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6425376358113217849}
   - component: {fileID: 6425376358113217848}
+  - component: {fileID: 383923517}
   m_Layer: 3
   m_Name: ScreenInput
   m_TagString: Untagged
@@ -130,3 +131,28 @@ MonoBehaviour:
     m_Bits: 8
   debugGameEvent: {fileID: 11400000, guid: d0b74b015aa821b43a0f085e197b5ee8, type: 2}
   groundPointer: {fileID: 1428921229}
+--- !u!114 &383923517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6425376358113217846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e80946054450c9469bf5677a27b899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStateChangedEvent: {fileID: 11400000, guid: efbb3a5678473444f9759187c3ec6a67, type: 2}
+  components:
+  - {fileID: 6425376358113217848}
+  colliders: []
+  enabledStates:
+  - {fileID: 11400000, guid: c85ffddb87fbc9b4ea304fe3188bb539, type: 2}
+  - {fileID: 11400000, guid: 28812d391f5033a478cf8bf247aa8cdc, type: 2}
+  disabledStates:
+  - {fileID: 11400000, guid: 950b597b3e8ac6e46871bd90fa3c2088, type: 2}
+  - {fileID: 11400000, guid: 19430d2fbfa366f48a8502609013bcd3, type: 2}
+  - {fileID: 11400000, guid: 12c4027ca5d66d44c95b09cf1046818c, type: 2}
+  - {fileID: 11400000, guid: 3a04c2a1165da6b4ab5386e0b0a8a02e, type: 2}
+  stateActions: []

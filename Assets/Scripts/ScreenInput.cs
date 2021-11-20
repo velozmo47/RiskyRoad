@@ -93,6 +93,7 @@ public class ScreenInput : MonoBehaviour
 
     void OnDisable()
     {
+        InteractiveElement = null;
         groundPointer.SetActive(false);
     }
 }
