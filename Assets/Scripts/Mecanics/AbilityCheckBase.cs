@@ -6,9 +6,9 @@ public class AbilityCheckBase : MonoBehaviour
 {
     [Header ("Dependencies")]
     [SerializeField]
-    FillableBar checkBar;
+    CurveCreator checkBar;
     [SerializeField]
-    FillableBar successBar;
+    CurveCreator successBar;
     [SerializeField]
     GameObject handle;
     [SerializeField]
@@ -76,10 +76,11 @@ public class AbilityCheckBase : MonoBehaviour
 
     private void UpdateCheckZone()
     {
+        if (checkBar == null) { return; }
+
         checkBar.SetFillAmount(checkSafeZone);
         Quaternion imageRotation = Quaternion.Euler(axisRotation * 360 * (checkValue - checkSafeZone * 0.5f));
-        checkBar.transform.rotation = imageRotation;
-        checkBar?.transform?.SetPositionAndRotation(checkBar.transform.position, imageRotation);
+        checkBar.transform.localRotation = imageRotation;
     }
 
     public void RandomizeCheckZone()
@@ -94,8 +95,10 @@ public class AbilityCheckBase : MonoBehaviour
 
     public void RotateHandle(float value)
     {
+        if (handle == null) { return; }
+
         Quaternion handleRotation = Quaternion.Euler(axisRotation * 360 * value);
-        handle?.transform.SetPositionAndRotation(handle.transform.position, handleRotation);
+        handle.transform.localRotation = handleRotation;
     }
 
     public void TestCheck()

@@ -440,7 +440,7 @@
     "m_VertexContext": {
         "m_Position": {
             "x": 1623.0,
-            "y": 211.99998474121095
+            "y": 212.0
         },
         "m_Blocks": [
             {
@@ -473,7 +473,7 @@
     },
     "m_PreviewData": {
         "serializedMesh": {
-            "m_SerializedMesh": "{\"mesh\":{\"fileID\":10202,\"guid\":\"0000000000000000e000000000000000\",\"type\":0}}",
+            "m_SerializedMesh": "{\"mesh\":{\"fileID\":-8803937527578110353,\"guid\":\"2336f67ca6917ce4d8d6f33a1d8b4624\",\"type\":3}}",
             "m_Guid": ""
         }
     },
@@ -687,6 +687,12 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
+    "m_ObjectId": "155ccc6a8e7f410a93ecea55a4480669"
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.MultiplyNode",
     "m_ObjectId": "15709edc4265483882b5231fbc394c2e",
     "m_Group": {
@@ -851,12 +857,6 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "VertexDescription.Tangent"
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
-    "m_ObjectId": "20a36ccaae1645e0a3a89fbb8e0d8bf7"
 }
 
 {
@@ -2532,7 +2532,7 @@
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
     "m_ObjectId": "bc0d77af563a40b1b38356714bfb6dee",
     "m_ActiveSubTarget": {
-        "m_Id": "20a36ccaae1645e0a3a89fbb8e0d8bf7"
+        "m_Id": "155ccc6a8e7f410a93ecea55a4480669"
     },
     "m_SurfaceType": 0,
     "m_AlphaMode": 0,
