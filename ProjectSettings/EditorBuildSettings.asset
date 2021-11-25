@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/RiskyRoad/_Scenes/MainMenu.unity
     guid: 399805cf3a3cb6e4391e05cd89d269f8
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/RiskyRoad/_Scenes/GameScene.unity
     guid: 894788148c19e4048885de0e501c3527
   - enabled: 1
-    path: Assets/Scenes/Managers.unity
+    path: Assets/RiskyRoad/_Scenes/Managers.unity
     guid: 3869ada056da81f49b0cb0c53d83266c
   - enabled: 1
-    path: Assets/Scenes/Gameplay.unity
+    path: Assets/RiskyRoad/_Scenes/Gameplay.unity
     guid: f1599f0dcf67d2344a75e4e842a3146f
   m_configObjects: {}
