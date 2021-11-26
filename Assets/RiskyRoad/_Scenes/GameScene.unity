@@ -499,7 +499,7 @@ Transform:
   m_Children:
   - {fileID: 778270559}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &589956705 stripped
 Transform:
@@ -535,7 +535,7 @@ Transform:
   m_Children:
   - {fileID: 1138632556}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &700071261
 GameObject:
@@ -1176,6 +1176,10 @@ PrefabInstance:
       propertyPath: sceneDependencies.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 1b5ee82648bac8a41bd4c5c9e063fffc, type: 2}
+    - target: {fileID: 5406168561303255119, guid: 9fca395a6b73bf14bbee40de65b722c0, type: 3}
+      propertyPath: onDependenciesLoaded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: c85ffddb87fbc9b4ea304fe3188bb539, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fca395a6b73bf14bbee40de65b722c0, type: 3}
 --- !u!4 &1138632556 stripped
@@ -1359,7 +1363,7 @@ Transform:
   m_Children:
   - {fileID: 1010292377}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1649985063
 GameObject:
@@ -1390,7 +1394,7 @@ Transform:
   m_Children:
   - {fileID: 1703935229}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1703935225
 GameObject:
@@ -1520,7 +1524,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2083570255
 GameObject:
