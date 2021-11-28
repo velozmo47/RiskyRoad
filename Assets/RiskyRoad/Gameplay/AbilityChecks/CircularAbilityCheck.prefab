@@ -210,8 +210,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4707432028848335260}
   - component: {fileID: 4707432028848335263}
+  - component: {fileID: 1291200116}
   m_Layer: 0
-  m_Name: AbilityCheckObject
+  m_Name: CircularAbilityCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,7 +255,7 @@ MonoBehaviour:
   fillSuccessAmount: 0.34
   axisRotation: {x: 0, y: 0, z: -1}
   speedHandleValue: 0.25
-  speedSuccessUpdate: 0.25
+  speedSuccessUpdate: 0.606
   checkSafeZone: 0.1
   onValueChange:
     m_PersistentCalls:
@@ -264,7 +265,45 @@ MonoBehaviour:
       m_Calls: []
   onSuccesAbilityCheck:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1291200116}
+        m_TargetAssemblyTypeName: GameStateChanger, Assembly-CSharp
+        m_MethodName: SetGameState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 28812d391f5033a478cf8bf247aa8cdc, type: 2}
+          m_ObjectArgumentAssemblyTypeName: GameStateSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: c515d9e50b1f0f145b3fbc4349e1c02d, type: 2}
+        m_TargetAssemblyTypeName: ScriptableObjectArchitecture.GameEventBase`1[[System.Boolean,
+          mscorlib
+        m_MethodName: Raise
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &1291200116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4707432028848335258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f6f46c286d09943bab1f41dff89e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 11400000, guid: 8bc555d2ce4736b469222e70c336eae0, type: 2}
 --- !u!1 &4707432028866636521
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 4707432029813444115}
   size: 1.24
-  pointsNumber: 16
+  pointsNumber: 32
   fillAmount: 1
 --- !u!120 &4707432029813444115
 LineRenderer:
@@ -529,21 +568,37 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 1.24, z: 0}
+  - {x: 0.241912, y: 1.2161738, z: 0}
   - {x: 0.47452748, y: 1.1456106, z: 0}
+  - {x: 0.6889071, y: 1.0310223, z: 0}
   - {x: 0.8768124, y: 0.8768124, z: 0}
+  - {x: 1.0310224, y: 0.688907, z: 0}
   - {x: 1.1456106, y: 0.47452745, z: 0}
+  - {x: 1.2161738, y: 0.24191189, z: 0}
   - {x: 1.24, y: -0.000000054202122, z: 0}
+  - {x: 1.2161738, y: -0.241912, z: 0}
   - {x: 1.1456106, y: -0.47452757, z: 0}
+  - {x: 1.0310222, y: -0.68890727, z: 0}
   - {x: 0.8768124, y: -0.8768124, z: 0}
+  - {x: 0.688907, y: -1.0310224, z: 0}
   - {x: 0.47452727, y: -1.1456107, z: 0}
+  - {x: 0.24191198, y: -1.2161738, z: 0}
   - {x: -0.000000108404244, y: -1.24, z: 0}
+  - {x: -0.2419122, y: -1.2161738, z: 0}
   - {x: -0.47452745, y: -1.1456106, z: 0}
+  - {x: -0.6889072, y: -1.0310222, z: 0}
   - {x: -0.8768126, y: -0.8768123, z: 0}
+  - {x: -1.0310225, y: -0.6889068, z: 0}
   - {x: -1.1456108, y: -0.4745271, z: 0}
+  - {x: -1.2161738, y: -0.24191208, z: 0}
   - {x: -1.24, y: 0.000000014786852, z: 0}
+  - {x: -1.2161738, y: 0.24191211, z: 0}
   - {x: -1.1456106, y: 0.4745277, z: 0}
+  - {x: -1.0310222, y: 0.6889073, z: 0}
   - {x: -0.8768121, y: 0.8768127, z: 0}
+  - {x: -0.6889072, y: 1.0310223, z: 0}
   - {x: -0.47452745, y: 1.1456107, z: 0}
+  - {x: -0.24191189, y: 1.2161738, z: 0}
   - {x: 0.00000021680849, y: 1.24, z: 0}
   m_Parameters:
     serializedVersion: 3
@@ -599,7 +654,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 0
-  m_Loop: 1
+  m_Loop: 0
 --- !u!1 &4707432029832672565
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +949,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c9afcee7ecd4a1642bb9823356ca400a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -981,7 +1036,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4707432029963627871}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.50000006
   m_Height: 1.9999999

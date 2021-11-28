@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
+using ScriptableObjectArchitecture;
 
 public class InteractiveElement : MonoBehaviour
 {
-    [SerializeField] UnityEvent onSelected;
+    [SerializeField] Vector3Event onSelected;
     [SerializeField] UnityEvent onRaycastHoverStart;
     [SerializeField] UnityEvent onRaycastHoverEnd;
 
@@ -13,10 +13,10 @@ public class InteractiveElement : MonoBehaviour
 
     }
 
-    public void Selected()
+    public void Selected(Vector3 position)
     {
         if (enabled == true)
-            onSelected?.Invoke();
+            onSelected?.Invoke(position);
     }
 
     public void RayHoverStart()

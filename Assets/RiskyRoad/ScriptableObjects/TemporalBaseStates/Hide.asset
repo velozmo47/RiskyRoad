@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe4d59e612f226418a9f7ddf54c95bf, type: 3}
-  m_Name: OnTargetFound
+  m_Script: {fileID: 11500000, guid: f58e76c97c731a74ca1df5748af787b6, type: 3}
+  m_Name: Hide
   m_EditorClassIdentifier: 
-  _debugValue: 0

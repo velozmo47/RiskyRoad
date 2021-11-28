@@ -121,9 +121,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4542438008293161790}
-  - component: {fileID: 4542438008293161787}
-  - component: {fileID: 4542438008293161788}
-  - component: {fileID: 4542438008293161789}
+  - component: {fileID: 647021610}
+  - component: {fileID: 647021611}
+  - component: {fileID: 647021612}
   m_Layer: 0
   m_Name: TemporalBaseSpaceship
   m_TagString: Untagged
@@ -143,11 +143,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4542438009336039801}
-  - {fileID: 4542438009210184537}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4542438008293161787
+--- !u!114 &647021610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,30 +155,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 4542438008293161791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Script: {fileID: 11500000, guid: ac2fc5a78b7e63945bfa39128a8eefc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _showDebugFields: 0
-  _enableGizmoDebugging: 0
+  _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 11400000, guid: 3e4619954a38a9d498e3ab6102a416d8, type: 2}
-  _event: {fileID: 11400000, guid: 3e4619954a38a9d498e3ab6102a416d8, type: 2}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: 45bf12a485ce63f45a551ab57b6dfde5, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4542438008937266493}
-        m_TargetAssemblyTypeName: TemporalBaseAnimationController, Assembly-CSharp
-        m_MethodName: TriggerAnimation
-        m_Mode: 5
+      - m_Target: {fileID: 4542438008293161790}
+        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+        m_MethodName: set_position
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Arrive
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4542438008293161788
+  _debugValue: {x: 0, y: 0, z: 0}
+--- !u!114 &647021611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542438008293161791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac2fc5a78b7e63945bfa39128a8eefc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: 45bf12a485ce63f45a551ab57b6dfde5, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4542438008937266493}
+        m_TargetAssemblyTypeName: TemporalBaseAnimationController, Assembly-CSharp
+        m_MethodName: EnterState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: f6f85fcc9012102429cb7d5b1a09143e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TemporalBaseStateSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debugValue: {x: 0, y: 0, z: 0}
+--- !u!114 &647021612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,99 +225,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showDebugFields: 0
-  _enableGizmoDebugging: 0
+  _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
   _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: 57f2e5f914850fd45a24c236d6d0d70c, type: 2}
+  _event: {fileID: 11400000, guid: c515d9e50b1f0f145b3fbc4349e1c02d, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4542438008937266493}
         m_TargetAssemblyTypeName: TemporalBaseAnimationController, Assembly-CSharp
-        m_MethodName: PlayEntryAnimation
-        m_Mode: 1
+        m_MethodName: EnterState
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 09384b8070638fa4e8cdec7ef1e51620, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TemporalBaseStateSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Leaving
           m_BoolArgument: 0
         m_CallState: 2
   _debugValue: 0
---- !u!114 &4542438008293161789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4542438008293161791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e80946054450c9469bf5677a27b899f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameStateChangedEvent: {fileID: 11400000, guid: efbb3a5678473444f9759187c3ec6a67, type: 2}
-  components: []
-  colliders:
-  - {fileID: 0}
-  enabledStates:
-  - {fileID: 11400000, guid: 28812d391f5033a478cf8bf247aa8cdc, type: 2}
-  disabledStates:
-  - {fileID: 11400000, guid: 950b597b3e8ac6e46871bd90fa3c2088, type: 2}
-  - {fileID: 11400000, guid: c85ffddb87fbc9b4ea304fe3188bb539, type: 2}
-  - {fileID: 11400000, guid: 3a04c2a1165da6b4ab5386e0b0a8a02e, type: 2}
-  - {fileID: 11400000, guid: 12c4027ca5d66d44c95b09cf1046818c, type: 2}
-  - {fileID: 11400000, guid: 19430d2fbfa366f48a8502609013bcd3, type: 2}
-  stateActions:
-  - gameState: {fileID: 11400000, guid: c85ffddb87fbc9b4ea304fe3188bb539, type: 2}
-    onStateEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4542438008937266493}
-          m_TargetAssemblyTypeName: TemporalBaseAnimationController, Assembly-CSharp
-          m_MethodName: TriggerAnimation
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Hide
-            m_BoolArgument: 0
-          m_CallState: 2
-  - gameState: {fileID: 11400000, guid: 3a04c2a1165da6b4ab5386e0b0a8a02e, type: 2}
-    onStateEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4542438008937266493}
-          m_TargetAssemblyTypeName: TemporalBaseAnimationController, Assembly-CSharp
-          m_MethodName: TriggerAnimation
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Leaving
-            m_BoolArgument: 0
-          m_CallState: 2
-  - gameState: {fileID: 11400000, guid: 28812d391f5033a478cf8bf247aa8cdc, type: 2}
-    onStateEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4542438008937266493}
-          m_TargetAssemblyTypeName: TemporalBaseAnimationController, Assembly-CSharp
-          m_MethodName: TriggerAnimation
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Idle
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &4542438008937266433
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +257,6 @@ GameObject:
   - component: {fileID: 4542438008937266432}
   - component: {fileID: 4542438008937266493}
   - component: {fileID: 4542438008937266494}
-  - component: {fileID: 4542438008937266495}
   m_Layer: 0
   m_Name: SpaceshipModel
   m_TagString: Untagged
@@ -312,7 +271,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4542438008937266433}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -353,6 +312,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4542438008937266432}
+  rootParent: {fileID: 4542438008293161790}
+  onStateChangeEvents:
+  - state: {fileID: 11400000, guid: 248cf88e3505c024b8aacd20d16d38c3, type: 2}
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8981541441284539955}
+          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - state: {fileID: 11400000, guid: f6f85fcc9012102429cb7d5b1a09143e, type: 2}
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8981541441284539955}
+          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - state: {fileID: 11400000, guid: 83726e92f71b9d24984d66d2129085e3, type: 2}
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8981541441284539955}
+          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - state: {fileID: 11400000, guid: 09384b8070638fa4e8cdec7ef1e51620, type: 2}
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8981541441284539955}
+          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &4542438008937266494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,18 +391,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 11400000, guid: 8bc555d2ce4736b469222e70c336eae0, type: 2}
---- !u!114 &4542438008937266495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4542438008937266433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ba7cf2777e851441b766f29dd9a2a43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4542438009210184538
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,13 +400,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4542438009210184537}
-  m_Layer: 0
+  - component: {fileID: 8981541441284539955}
+  - component: {fileID: 1481817472609189440}
+  m_Layer: 3
   m_Name: SpaceshipColliderTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4542438009210184537
 Transform:
   m_ObjectHideFlags: 0
@@ -401,13 +416,108 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4542438009210184538}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4542438008293161790}
+  m_Father: {fileID: 4542438009336039801}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8981541441284539955
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542438009210184538}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.48817635, z: 1.8962584}
+  m_Center: {x: 0, y: -0.03366649, z: -0.028749824}
+--- !u!114 &1481817472609189440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542438009210184538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04f9079e4d195c408f9cce57adf80e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4542438009336039800}
+        m_TargetAssemblyTypeName: TweenEffect, Assembly-CSharp
+        m_MethodName: PlayTweenToNormal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 9b4eb092352634340a2919c5b132e514, type: 2}
+        m_TargetAssemblyTypeName: ScriptableObjectArchitecture.GameEventBase`1[[UnityEngine.GameObject,
+          UnityEngine
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8981541441284539955}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRaycastHoverStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4542438009336039800}
+        m_TargetAssemblyTypeName: TweenEffect, Assembly-CSharp
+        m_MethodName: PlayTweenToHighlighted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRaycastHoverEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4542438009336039800}
+        m_TargetAssemblyTypeName: TweenEffect, Assembly-CSharp
+        m_MethodName: PlayTweenToNormal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4542438009336039802
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,10 +543,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4542438009336039802}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.22, z: -0.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4542438008937266434}
+  - {fileID: 4542438009210184537}
   m_Father: {fileID: 4542438008293161790}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -674,7 +785,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7162105842154026282}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

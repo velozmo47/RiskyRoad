@@ -66,7 +66,7 @@ public class ScreenInput : MonoBehaviour
         if (objectDetected)
         {
             debugGameEvent?.Raise(hit.transform.name);
-            hit.transform.GetComponent<InteractiveElement>()?.Selected();
+            hit.transform.GetComponent<InteractiveElement>()?.Selected(hit.point);
         }
     }
 

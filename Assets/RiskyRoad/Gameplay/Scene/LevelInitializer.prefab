@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneDependencies:
   - {fileID: 11400000, guid: 5acc591ed9f932243b1dda4376cd53a3, type: 2}
+  - {fileID: 11400000, guid: 1b5ee82648bac8a41bd4c5c9e063fffc, type: 2}
   onDependenciesLoaded:
     m_PersistentCalls:
       m_Calls:
