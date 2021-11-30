@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
+using ScriptableObjectArchitecture;
 
 public class AbilityCheckBase : MonoBehaviour
 {
@@ -13,8 +13,6 @@ public class AbilityCheckBase : MonoBehaviour
     GameObject handle;
     [SerializeField]
     float fillSuccessAmount = 0.34f;
-    [SerializeField]
-    Vector3 axisRotation = Vector3.up;
 
     [Header ("Parameters")]
     [SerializeField, Range (0f, 2f)]
@@ -26,13 +24,13 @@ public class AbilityCheckBase : MonoBehaviour
 
     [Header ("Actions")]
     [SerializeField]
-    UnityEventFloat onValueChange;
+    FloatEvent onValueChange;
     [SerializeField]
     UnityEvent onSuccessfullCheck;
     [SerializeField]
     UnityEvent onSuccesAbilityCheck;
-
-    float checkValue;
+    
+    public float checkValue;
     float handleValue = 0f;
     float successValue = 0f;
 
@@ -49,7 +47,6 @@ public class AbilityCheckBase : MonoBehaviour
 
     void OnEnable()
     {
-        axisRotation = Vector3.Normalize(axisRotation);
         checkBar?.SetFillAmount(0);
         successBar?.SetFillAmount(0);
         successValue = 0f;
@@ -68,6 +65,7 @@ public class AbilityCheckBase : MonoBehaviour
         successBar?.SetFillAmount(
             Mathf.Clamp (successBar.GetFillAmount() + Time.deltaTime * speedSuccessUpdate, 0, successValue)
         );
+
         if (successBar?.GetFillAmount() >= 1)
         {
             onSuccesAbilityCheck?.Invoke();
@@ -79,8 +77,7 @@ public class AbilityCheckBase : MonoBehaviour
         if (checkBar == null) { return; }
 
         checkBar.SetFillAmount(checkSafeZone);
-        Quaternion imageRotation = Quaternion.Euler(axisRotation * 360 * (checkValue - checkSafeZone * 0.5f));
-        checkBar.transform.localRotation = imageRotation;
+        checkBar.SetCurveOffset(checkValue - checkSafeZone * 0.5f);
     }
 
     public void RandomizeCheckZone()
@@ -96,9 +93,8 @@ public class AbilityCheckBase : MonoBehaviour
     public void RotateHandle(float value)
     {
         if (handle == null) { return; }
-
-        Quaternion handleRotation = Quaternion.Euler(axisRotation * 360 * value);
-        handle.transform.localRotation = handleRotation;
+        
+        handle.transform.position = checkBar.GetPoint(handleValue);
     }
 
     public void TestCheck()
@@ -116,7 +112,4 @@ public class AbilityCheckBase : MonoBehaviour
     {
         successValue = Mathf.Clamp(successValue + value, 0, 1);
     }
-
-    [System.Serializable]
-    public class UnityEventFloat : UnityEvent<float> {}
 }

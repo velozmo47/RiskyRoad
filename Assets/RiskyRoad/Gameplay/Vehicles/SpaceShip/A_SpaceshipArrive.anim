@@ -1537,7 +1537,7 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.9833333
+  - time: 2
     functionName: EnterState
     data: 
     objectReferenceParameter: {fileID: 11400000, guid: 83726e92f71b9d24984d66d2129085e3, type: 2}

@@ -5,7 +5,6 @@ using ScriptableObjectArchitecture;
 public class TemporalBase : MonoBehaviour
 {
     [SerializeField] Animator animator;
-    [SerializeField] Transform rootParent;
     
     [Header ("Actions")]
     [SerializeField] OnStateChangeEvent[] onStateChangeEvents;

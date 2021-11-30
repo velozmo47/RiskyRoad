@@ -1580,7 +1580,7 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 2.2666667
+  - time: 2.3
     functionName: SetGameState
     data: 
     objectReferenceParameter: {fileID: 11400000, guid: c85ffddb87fbc9b4ea304fe3188bb539, type: 2}

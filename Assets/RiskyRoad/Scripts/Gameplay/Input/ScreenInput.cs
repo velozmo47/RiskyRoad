@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using ScriptableObjectArchitecture;
-using System;
 
 public class ScreenInput : MonoBehaviour
 {
@@ -28,15 +25,34 @@ public class ScreenInput : MonoBehaviour
     void Update()
     {
         Vector2 screenPosition = GetScreenCenter();
+        GetMousePosition(ref screenPosition);
+        GetTouchPosition(ref screenPosition);
+
         RaycastHit hit = CheckGroundWithRay(screenPosition);
         TriggerGroundResponse(hit);
         DrawGroundPointer(hit);
 
-        if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
+        if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonDown(0))
         {
-            // screenPosition = Input.GetTouch(0).position;
-            // screenPosition = Input.mousePosition;
             SelectOnInput(hit);
+        }
+    }
+
+    public void GetMousePosition(ref Vector2 screenPosition)
+    {
+        Rect rect = new Rect(Vector2.zero, Vector2.right * Screen.width + Vector2.up * Screen.height);
+        if (rect.Contains(Input.mousePosition))
+        {
+            screenPosition = Input.mousePosition;
+        }
+    }
+
+    public void GetTouchPosition(ref Vector2 screenPosition)
+    {
+        Rect rect = new Rect(Vector2.zero, Vector2.right * Screen.width + Vector2.up * Screen.height);
+        if (Input.touchCount > 0)
+        {
+            screenPosition = Input.GetTouch(0).position;
         }
     }
 

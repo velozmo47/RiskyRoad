@@ -10,12 +10,14 @@ public class CurveCreator : MonoBehaviour
 {
     [SerializeField]
     LineRenderer lineRenderer;
-    [SerializeField, Range (0, 10)]
-    float size = 1;
     [SerializeField, Range (0, 50)]
     int pointsNumber;
     [SerializeField, Range(0f, 1f)]
     float fillAmount;
+    [SerializeField]
+    Curve curve;
+
+    public Curve Curve => curve;
 
     void Update()
     {
@@ -34,10 +36,20 @@ public class CurveCreator : MonoBehaviour
 
             for (int i = 0; i < totalPoints; i++)
             {
-                Vector3 point = Circle(size, (float)i / (pointsNumber % totalPoints) * fillAmount);
+                Vector3 point = curve.CurvePoint((float)i / (pointsNumber % totalPoints) * fillAmount);
                 lineRenderer.SetPosition(i, point);
             }
         }
+    }
+
+    public Vector3 GetPoint(float value, float offset = 0)
+    {
+        return transform.TransformPoint(Curve.CurvePoint(value, offset));
+    }
+
+    public void SetCurveOffset(float offset)
+    {
+        Curve.Offset = offset;
     }
 
     public void SetFillAmount(float value)
@@ -49,13 +61,5 @@ public class CurveCreator : MonoBehaviour
     public float GetFillAmount()
     {
         return fillAmount;
-    }
-
-    public static Vector3 Circle(float size, float time)
-    {
-        float x = size * Mathf.Sin(Mathf.PI * 2 * time);
-        float y = size * Mathf.Cos(Mathf.PI * 2 * time);
-
-        return new Vector3 (x, y);
     }
 }

@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class TweenEffect : MonoBehaviour
 {
-    [SerializeField, Range (0f, 5f)]
-    float highlightedScale = 1.5f,
-    normalScale = 1f,
-    highlightedTime = 0.5f,
-    normalTime = 0.5f;
-
-    [SerializeField]
-    AnimationCurve animationCurve;
+    [SerializeField] TweenSettings normal;
+    [SerializeField] TweenSettings highlighted;
+    [SerializeField] TweenSettings selected;
 
     void Start()
     {
@@ -21,13 +14,36 @@ public class TweenEffect : MonoBehaviour
 
     public void PlayTweenToHighlighted ()
     {
-        var tween = LeanTween.scale(gameObject, Vector3.one * highlightedScale, highlightedTime);
-        tween.setEase(animationCurve);
+        highlighted.PlayTween(gameObject);
     }
 
     public void PlayTweenToNormal()
     {
-        var tween = LeanTween.scale(gameObject, Vector3.one * normalScale, normalTime);
-        tween.setEase(animationCurve);
+        normal.PlayTween(gameObject);
+    }
+
+    public void PlayTweenToSelected()
+    {
+        selected.PlayTween(gameObject);
+    }
+
+    [System.Serializable]
+    public class TweenSettings
+    {
+        public float scale = 1.0f;
+        public float time = 1.0f;
+        public AnimationCurve animationCurve;
+        public UnityEvent onTweenEnd;
+
+        public void PlayTween(GameObject gameObject)
+        {
+            var tween = LeanTween.scale(gameObject, Vector3.one * scale, time);
+            tween.setEase(animationCurve);
+
+            if (onTweenEnd == null)
+            {
+                tween.setOnComplete(() => onTweenEnd.Invoke());
+            }
+        }
     }
 }

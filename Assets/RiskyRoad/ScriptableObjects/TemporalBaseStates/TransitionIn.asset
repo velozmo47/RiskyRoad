@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180d046735a44ec4c958076ec9c0035e, type: 3}
-  m_Name: CreateTemporalBaseRequest
+  m_Script: {fileID: 11500000, guid: f58e76c97c731a74ca1df5748af787b6, type: 3}
+  m_Name: TransitionIn
   m_EditorClassIdentifier: 
-  _debugValue: {fileID: 11400000, guid: cd075531e2b59794d97e18561943326d, type: 2}
