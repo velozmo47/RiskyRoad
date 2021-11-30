@@ -508,10 +508,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneInitializer
       objectReference: {fileID: 0}
-    - target: {fileID: 5406168561303255119, guid: 9fca395a6b73bf14bbee40de65b722c0, type: 3}
-      propertyPath: onDependenciesLoaded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: c85ffddb87fbc9b4ea304fe3188bb539, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fca395a6b73bf14bbee40de65b722c0, type: 3}
 --- !u!4 &1138632556 stripped
@@ -896,22 +892,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 300485536}
     m_Modifications:
-    - target: {fileID: 1428921230, guid: 1a373e72fa3a33a46a5f0521ef44b9e6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.048279
-      objectReference: {fileID: 0}
-    - target: {fileID: 1428921230, guid: 1a373e72fa3a33a46a5f0521ef44b9e6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.48279
-      objectReference: {fileID: 0}
-    - target: {fileID: 1428921230, guid: 1a373e72fa3a33a46a5f0521ef44b9e6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.048279
-      objectReference: {fileID: 0}
-    - target: {fileID: 1428921231, guid: 1a373e72fa3a33a46a5f0521ef44b9e6, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6425376358113217846, guid: 1a373e72fa3a33a46a5f0521ef44b9e6, type: 3}
       propertyPath: m_Name
       value: ScreenInput

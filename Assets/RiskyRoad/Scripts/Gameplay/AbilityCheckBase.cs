@@ -30,7 +30,7 @@ public class AbilityCheckBase : MonoBehaviour
     [SerializeField]
     UnityEvent onSuccesAbilityCheck;
     
-    public float checkValue;
+    float checkValue;
     float handleValue = 0f;
     float successValue = 0f;
 
@@ -45,8 +45,11 @@ public class AbilityCheckBase : MonoBehaviour
         }
     }
 
-    void OnEnable()
+    public void StartCheck()
     {
+        gameObject.SetActive(true);
+        checkBar.gameObject.SetActive(true);
+        handle.SetActive(true);
         checkBar?.SetFillAmount(0);
         successBar?.SetFillAmount(0);
         successValue = 0f;
@@ -55,8 +58,8 @@ public class AbilityCheckBase : MonoBehaviour
 
     void FixedUpdate()
     {
-        UpdateHandle();
         UpdateSuccessBar();
+        UpdateHandle();
         UpdateCheckZone();
     }
 
@@ -69,6 +72,7 @@ public class AbilityCheckBase : MonoBehaviour
         if (successBar?.GetFillAmount() >= 1)
         {
             onSuccesAbilityCheck?.Invoke();
+            gameObject.SetActive(false);
         }
     }
 
@@ -111,5 +115,10 @@ public class AbilityCheckBase : MonoBehaviour
     public void FillSuccessBar(float value)
     {
         successValue = Mathf.Clamp(successValue + value, 0, 1);
+        if (successValue >= 1)
+        {
+            handle.SetActive(false);
+            checkBar.gameObject.SetActive(false);
+        }
     }
 }

@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 226ff0afa1b9942489b3d5b755b7434a, type: 3}
-  m_Name: Satelite
+  m_Script: {fileID: 11500000, guid: fced100c7885d854aad025d3879f5960, type: 3}
+  m_Name: Construction
   m_EditorClassIdentifier: 
-  modelPrefab: {fileID: 0}

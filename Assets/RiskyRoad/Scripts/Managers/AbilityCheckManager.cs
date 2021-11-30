@@ -3,15 +3,15 @@ using UnityEngine.Events;
 
 public class AbilityCheckManager : MonoBehaviour
 {
-    [SerializeField] Canvas canvas;
+    [SerializeField] AbilityCheckBase abilityCheck;
 
     [Header ("Actions")]
     [SerializeField] UnityEvent onAbilityCheckStart;
 
     public void InitiateCheck(GameObject abilityCheck)
     {
+        this.abilityCheck.StartCheck();
+
         onAbilityCheckStart?.Invoke();
-        
-        // Instantiate(abilityCheck, canvas.transform.position, canvas.transform.rotation, canvas.transform);
     }
 }
