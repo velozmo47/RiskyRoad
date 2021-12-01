@@ -6,18 +6,20 @@ using System.Collections.Generic;
 public class ConstructionManager : MonoBehaviour
 {
     [SerializeField] Construction construction;
+    [SerializeField] NodeConecter nodeConecter;
     [SerializeField] Transform nodeParent;
 
     [Header ("Actions")]
     [SerializeField] UnityEvent onConstructionStart;
-    
-    List<Node> nodes = new List<Node>();
 
     public void StartConstruction(ConstructionSO constructionRequest)
     {
-        construction.StartConstruction(constructionRequest);
+        if (nodeConecter.isFull == false)
+        {
+            construction.StartConstruction(constructionRequest);
 
-        onConstructionStart?.Invoke();
+            onConstructionStart?.Invoke();
+        }
     }
 
     public void ConstructionComplete(GameObject node)
@@ -27,8 +29,8 @@ public class ConstructionManager : MonoBehaviour
         if (newNode)
         {
             newNode.transform.SetParent(nodeParent, true);
-            nodes.Add(newNode);
-            newNode.InitializeNode();
+
+            newNode.InitializeNode(() => nodeConecter.ConnectNode(newNode));
         }
     }
 }

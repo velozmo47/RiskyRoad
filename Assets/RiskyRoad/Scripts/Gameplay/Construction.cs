@@ -5,8 +5,9 @@ using UnityEngine.Events;
 public class Construction : MonoBehaviour
 {
     [SerializeField] AbilityCheckBase abilityCheck;
+
+    [Header ("Actions")]
     [SerializeField] GameObjectEvent onConstructionComplete;
-    [SerializeField] Transform sceneTransform;
     
     ConstructionSO constructionRequest;
 
@@ -18,7 +19,7 @@ public class Construction : MonoBehaviour
 
     public void ConstructionComplete()
     {
-        var node = Instantiate(constructionRequest.nodePrefab, sceneTransform, false);
+        var node = Instantiate(constructionRequest.nodePrefab, transform, false);
         onConstructionComplete?.Invoke(node);
     }
 }
