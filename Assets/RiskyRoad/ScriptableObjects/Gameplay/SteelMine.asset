@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a17d0ec9e825dde4d918145b29413ae4, type: 3}
-  m_Name: TemporalBase
+  m_Script: {fileID: 11500000, guid: 91105f57fb2468342a25cf828e9c2ccf, type: 3}
+  m_Name: SteelMine
   m_EditorClassIdentifier: 
-  initialState: {fileID: 11400000, guid: f6f85fcc9012102429cb7d5b1a09143e, type: 2}
-  mine: 0
+  mine: {fileID: 0}
+  steelAvailable: 2
+  inventory: {fileID: 11400000, guid: c84e9a668625df34d90bcb9eab49ab60, type: 2}

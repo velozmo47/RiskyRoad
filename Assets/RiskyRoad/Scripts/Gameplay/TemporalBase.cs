@@ -5,15 +5,31 @@ using ScriptableObjectArchitecture;
 public class TemporalBase : MonoBehaviour
 {
     [SerializeField] Animator animator;
+    [SerializeField] TweenEffect tween;
+    [SerializeField] GameObject mineButton;
     
     [Header ("Actions")]
     [SerializeField] OnStateChangeEvent[] onStateChangeEvents;
 
     TemporalBaseStateSO currentState;
+    TemporalBaseSO temporalBaseSO;
 
     void OnEnable()
     {
         TriggerAnimation(currentState);
+    }
+
+    public void StartTemporalBase(TemporalBaseSO temporalBaseSO)
+    {
+        tween.transform.localScale = Vector3.one;
+        EnterState(temporalBaseSO.initialState);
+        this.temporalBaseSO = temporalBaseSO;
+    }
+
+    public void SetupMine()
+    {
+        if (temporalBaseSO == null) { return; }
+        mineButton?.SetActive(temporalBaseSO.mine);
     }
 
     public void TriggerAnimation(TemporalBaseStateSO state)

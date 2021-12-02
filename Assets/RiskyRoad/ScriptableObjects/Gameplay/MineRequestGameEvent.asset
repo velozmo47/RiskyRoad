@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a17d0ec9e825dde4d918145b29413ae4, type: 3}
-  m_Name: TemporalBase
+  m_Script: {fileID: 11500000, guid: e41562281aead2e4394c001180b05cd3, type: 3}
+  m_Name: MineRequestGameEvent
   m_EditorClassIdentifier: 
-  initialState: {fileID: 11400000, guid: f6f85fcc9012102429cb7d5b1a09143e, type: 2}
-  mine: 0
+  _debugValue: {fileID: 11400000, guid: 7cd5b61f9ca497d4b89f18dbd3c07d43, type: 2}

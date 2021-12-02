@@ -4,4 +4,5 @@ using UnityEngine;
 public class TemporalBaseSO : ScriptableObject
 {
     public TemporalBaseStateSO initialState;
+    public bool mine;
 }

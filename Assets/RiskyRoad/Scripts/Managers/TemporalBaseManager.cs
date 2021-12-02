@@ -11,7 +11,7 @@ public class TemporalBaseManager : MonoBehaviour
     
     public void CreateTemporalBase(TemporalBaseSO temporalBaseRequest)
     {
-        baseController.EnterState(temporalBaseRequest.initialState);
+        baseController.StartTemporalBase(temporalBaseRequest);
         onBaseCreated?.Invoke();
     }
 }
