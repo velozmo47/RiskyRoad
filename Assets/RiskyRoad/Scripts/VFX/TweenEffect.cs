@@ -7,11 +7,6 @@ public class TweenEffect : MonoBehaviour
     [SerializeField] TweenSettings highlighted;
     [SerializeField] TweenSettings selected;
 
-    void Start()
-    {
-
-    }
-
     public void PlayTweenToHighlighted ()
     {
         highlighted.PlayTween(gameObject);
@@ -25,6 +20,13 @@ public class TweenEffect : MonoBehaviour
     public void PlayTweenToSelected()
     {
         selected.PlayTween(gameObject);
+    }
+
+    public void Reset()
+    {
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+        transform.localScale = Vector3.one;
     }
 
     [System.Serializable]

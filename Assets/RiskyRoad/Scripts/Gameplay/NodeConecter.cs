@@ -18,15 +18,15 @@ public class NodeConecter : MonoBehaviour
     int currentNode;
     public bool isFull => nodes.Count >= maxNodes;
 
+    void Awake()
+    {
+        lineRenderer.positionCount = 0;
+    }
+
     void OnEnable()
     {
         if (state == NodeConecterState.StandBy && nodes.Count >= 2)
         {
-            for (int i = 0; i < nodes.Count; i++)
-            {
-                nodes[i].InitializeNode();
-            }
-
             SetupConnection();
         }
     }
@@ -39,18 +39,26 @@ public class NodeConecter : MonoBehaviour
         }
     }
 
-    public void SetupConnection()
+    void SetupConnection()
     {
-        state = NodeConecterState.Connecting;
-        lineRenderer.positionCount = 2;
-        lineRenderer.SetPosition(0, nodes[0].Connection);
-        lineRenderer.SetPosition(1, nodes[0].Connection);
-        currentNode = 1;
+        if (nodes.Count == 2)
+        {
+            state = NodeConecterState.Connecting;
+            lineRenderer.positionCount = 2;
+            lineRenderer.SetPosition(0, nodes[0].Connection);
+            lineRenderer.SetPosition(1, nodes[0].Connection);
+            currentNode = 1;
+        }
     }
 
-    public void ConnectingNodes()
+    void ConnectingNodes()
     {
-        if (currentNode >= nodes.Count || nodes[currentNode].Initialized == false) { return; }
+        if (currentNode >= nodes.Count) { return; }
+
+        if (nodes[currentNode].Initialized == false)
+        {
+            nodes[currentNode].InitializeNode();
+        }
 
         Vector3 currentPos = lineRenderer.GetPosition(currentNode);
         Vector3 deltaMove = Vector3.MoveTowards(currentPos, nodes[currentNode].Connection, Time.deltaTime);
@@ -75,19 +83,13 @@ public class NodeConecter : MonoBehaviour
 
     public void ConnectNode(Node node)
     {
-        if (nodes.Count < maxNodes)
+        if (nodes.Count >= maxNodes) { return; }
+
+        nodes.Add(node);
+        if (!isFull)
         {
-            nodes.Add(node);
-
-            if (nodes.Count == 2)
-            {
-                SetupConnection();
-            }
-
-            if (!isFull)
-            {
-                onNodeInitialized?.Invoke();
-            }
+            SetupConnection();
+            onNodeInitialized?.Invoke();
         }
     }
 

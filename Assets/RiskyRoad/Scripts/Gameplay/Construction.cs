@@ -14,14 +14,17 @@ public class Construction : MonoBehaviour
 
     public void StartConstruction(ConstructionSO constructionRequest)
     {
-        tweenEffect.PlayTweenToNormal();
+        gameObject.SetActive(true);
+        tweenEffect.transform.localScale = Vector3.zero;
         this.constructionRequest = constructionRequest;
-        abilityCheck.StartCheck();
+        abilityCheck.gameObject.SetActive(false);
+        tweenEffect.PlayTweenToNormal();
     }
 
     public void ConstructionComplete()
     {
         var node = Instantiate(constructionRequest.nodePrefab, transform, false);
         onConstructionComplete?.Invoke(node);
+        gameObject.SetActive(false);
     }
 }
