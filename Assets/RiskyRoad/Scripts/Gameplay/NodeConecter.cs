@@ -18,11 +18,6 @@ public class NodeConecter : MonoBehaviour
     int currentNode;
     public bool isFull => nodes.Count >= maxNodes;
 
-    void Awake()
-    {
-        lineRenderer.positionCount = 0;
-    }
-
     void OnEnable()
     {
         if (state == NodeConecterState.StandBy && nodes.Count >= 2)
@@ -89,7 +84,10 @@ public class NodeConecter : MonoBehaviour
                 SetupConnection();
             }
 
-            onNodeInitialized?.Invoke();
+            if (!isFull)
+            {
+                onNodeInitialized?.Invoke();
+            }
         }
     }
 

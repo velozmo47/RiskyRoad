@@ -32,7 +32,7 @@ public class ScreenInput : MonoBehaviour
         TriggerGroundResponse(hit);
         DrawGroundPointer(hit);
 
-        if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
         {
             SelectOnInput(hit);
         }
@@ -92,15 +92,19 @@ public class ScreenInput : MonoBehaviour
         RaycastHit hit;
 
         objectDetected = Physics.Raycast(ray, out hit, Mathf.Infinity, interactionLayers);
+        if (objectDetected)
+        {
+            debugGameEvent.Raise(hit.transform.name);
+        }
 
         return hit;
     }
 
     public void DrawGroundPointer(RaycastHit hit)
     {
-        groundPointer.SetActive(objectDetected);
+        groundPointer.SetActive(interactiveElement);
 
-        if (objectDetected)
+        if (interactiveElement)
         {
             groundPointer.transform.position = Vector3.Lerp(groundPointer.transform.position, hit.point, Time.deltaTime * 4);
             groundPointer.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);

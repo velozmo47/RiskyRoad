@@ -39,11 +39,7 @@ public class TweenEffect : MonoBehaviour
         {
             var tween = LeanTween.scale(gameObject, Vector3.one * scale, time);
             tween.setEase(animationCurve);
-
-            if (onTweenEnd == null)
-            {
-                tween.setOnComplete(() => onTweenEnd.Invoke());
-            }
+            tween.setOnComplete(() => onTweenEnd?.Invoke());
         }
     }
 }

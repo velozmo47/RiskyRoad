@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class Construction : MonoBehaviour
 {
     [SerializeField] AbilityCheckBase abilityCheck;
+    [SerializeField] TweenEffect tweenEffect;
 
     [Header ("Actions")]
     [SerializeField] GameObjectEvent onConstructionComplete;
@@ -13,6 +14,7 @@ public class Construction : MonoBehaviour
 
     public void StartConstruction(ConstructionSO constructionRequest)
     {
+        tweenEffect.PlayTweenToNormal();
         this.constructionRequest = constructionRequest;
         abilityCheck.StartCheck();
     }

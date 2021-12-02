@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c1f5f3d8372914ea98d77229b1bf39, type: 3}
   m_Name: ConstructionRequest
   m_EditorClassIdentifier: 
-  _debugValue: {fileID: 0}
+  _debugValue: {fileID: 11400000, guid: 74f48c42fe66b4f478617e71d5d00482, type: 2}
