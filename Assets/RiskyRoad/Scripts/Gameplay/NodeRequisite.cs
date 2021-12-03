@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class NodeRequisite : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] TextMesh textMesh;
     [SerializeField] Color complete = Color.green;
     [SerializeField] Color incomplete = Color.red;
     [SerializeField] InventorySO inventory;
@@ -15,6 +16,8 @@ public class NodeRequisite : MonoBehaviour
 
     void OnEnable()
     {
+        transform.localScale = Vector3.one;
+        textMesh.text = inventory.steelAvailable.ToString() + "/" + steelRequiered.ToString();
         if (inventory.steelAvailable >= steelRequiered)
         {
             spriteRenderer.color = complete;

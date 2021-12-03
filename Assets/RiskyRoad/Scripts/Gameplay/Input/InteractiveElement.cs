@@ -1,17 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
 using ScriptableObjectArchitecture;
+using UnityEngine.EventSystems;
 
-public class InteractiveElement : MonoBehaviour
+public class InteractiveElement : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] Vector3Event onSelected;
     [SerializeField] UnityEvent onRaycastHoverStart;
     [SerializeField] UnityEvent onRaycastHoverEnd;
-
-    void Start()
-    {
-
-    }
 
     public void Selected(Vector3 position)
     {
@@ -29,5 +25,20 @@ public class InteractiveElement : MonoBehaviour
     {
         if (enabled == true)
             onRaycastHoverEnd?.Invoke();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Selected(eventData.pressPosition);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        RayHoverStart();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        RayHoverEnded();
     }
 }

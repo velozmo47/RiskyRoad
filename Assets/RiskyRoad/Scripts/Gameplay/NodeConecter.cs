@@ -1,13 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using ScriptableObjectArchitecture;
 
 [RequireComponent(typeof(LineRenderer))]
 public class NodeConecter : MonoBehaviour
 {
     [SerializeField] LineRenderer lineRenderer;
-    [SerializeField, Range(2, 10)] int maxNodes = 3;
+    [SerializeField] IntReference maxNodes;
     [SerializeField] List<Node> nodes = new List<Node>();
+    [SerializeField] IntReference sateliteCount;
 
     [Header ("Actions")]
     [SerializeField] UnityEvent onNodeInitialized;
@@ -16,7 +18,7 @@ public class NodeConecter : MonoBehaviour
     NodeConecterState state = NodeConecterState.StandBy;
     
     int currentNode;
-    public bool isFull => nodes.Count >= maxNodes;
+    public bool isFull => nodes.Count >= maxNodes.Value;
 
     void Awake()
     {
@@ -25,6 +27,7 @@ public class NodeConecter : MonoBehaviour
 
     void OnEnable()
     {
+        sateliteCount.Value = nodes.Count;
         if (state == NodeConecterState.StandBy && nodes.Count >= 2)
         {
             SetupConnection();
@@ -68,7 +71,7 @@ public class NodeConecter : MonoBehaviour
         {
             currentNode++;
 
-            if (currentNode >= maxNodes)
+            if (currentNode >= maxNodes.Value)
             {
                 state = NodeConecterState.Connected;
                 onNodesConected?.Invoke();
@@ -83,9 +86,10 @@ public class NodeConecter : MonoBehaviour
 
     public void ConnectNode(Node node)
     {
-        if (nodes.Count >= maxNodes) { return; }
+        if (nodes.Count >= maxNodes.Value) { return; }
 
         nodes.Add(node);
+        sateliteCount.Value = nodes.Count;
         if (!isFull)
         {
             SetupConnection();

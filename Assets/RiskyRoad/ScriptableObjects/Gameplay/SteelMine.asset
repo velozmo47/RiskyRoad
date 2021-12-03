@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SteelMine
   m_EditorClassIdentifier: 
   mine: {fileID: 0}
-  steelAvailable: 2
+  steelAvailable: 1
   inventory: {fileID: 11400000, guid: c84e9a668625df34d90bcb9eab49ab60, type: 2}
