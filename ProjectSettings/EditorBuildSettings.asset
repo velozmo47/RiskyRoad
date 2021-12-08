@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/NRSDK/Demos/HelloMR Original.unity
     guid: dd74f1c9685ef48499229d4957b58000
+  - enabled: 1
+    path: Assets/RiskyRoad/_Scenes/HelloMR.unity
+    guid: 8669813218d006d4e87c3d7107eaad06
   - enabled: 0
     path: Assets/RiskyRoad/_Scenes/MainMenu.unity
     guid: 399805cf3a3cb6e4391e05cd89d269f8
