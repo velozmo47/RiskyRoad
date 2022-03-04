@@ -41,7 +41,14 @@ public class PlaneController : MonoBehaviour
             if (isNRTrackableBehaviour)
             {
                 var behaviour = hitResult.collider.gameObject.GetComponent<NRTrackableBehaviour>();
-                bool isPlane = behaviour.Trackable.GetTrackableType() == TrackableType.TRACKABLE_PLANE;
+                // if (behaviour.Trackable?.GetTrackableType() == TrackableType.TRACKABLE_PLANE) {
+                //     Debug.Log("NO TIENE TRACKEABLE");
+                // }
+                // if (!behaviour)
+                // {
+                //     return false;
+                // }
+                bool isPlane = behaviour.Trackable?.GetTrackableType() == TrackableType.TRACKABLE_PLANE;
                 if (!isPlane)
                 {
                     return false;
